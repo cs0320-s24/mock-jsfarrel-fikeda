@@ -14,6 +14,15 @@ const csvData = [
     ['Gray St', '320000', '4', '3', '2000', '12351', 'Woonsocket', 'RI', 'Townhouse']
 ];
 
+const csvDataAlt = [
+    ['Street', 'Price', 'City', 'State', 'Type'],
+    ['Dog Ave', '100000', 'Providence', 'RI', 'House'],
+    ['Cat St', '22300', 'East Providence', 'RI', 'House'],
+    ['Bird St', '230000', 'Warwick', 'RI', 'Apartment'],
+    ['Fish St', '4000', 'Providence', 'RI', 'House'],
+    ['Turtle St', '28000', 'Providence', 'RI', 'Townhouse']
+];
+
 const searchResultsGold = [
     ['Gold St', '350000', '4', '3', '2200', '12348', 'Johnston', 'RI', 'Townhouse']
 ];
