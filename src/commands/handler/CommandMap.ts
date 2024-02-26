@@ -19,5 +19,5 @@ export const commandMap: CommandMap = {
   echo: readBackArgs,
   search: searchFile,
   load: loadFile,
-  view: viewFile
+  view: viewFile 
 };
