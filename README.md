@@ -2,6 +2,8 @@
 
 # Project Details
 
+Welcome to our Mock project! This project features the front-end functionality of a program that allows real estate appraisers to process and explore data from an existing CSV file. 
+
 # Design Choices
 
 # Errors/Bugs
@@ -11,4 +13,5 @@
 # How to
 
 # Collaboration
-*(state all of your sources of collaboration past your project partner. Please refer to the course's collaboration policy for any further questions.)*
+
+
