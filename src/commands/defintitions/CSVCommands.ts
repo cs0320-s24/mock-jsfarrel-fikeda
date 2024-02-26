@@ -22,7 +22,7 @@ export function viewFile(args: string[]): string {
   if (loadedfile === null) {
     return "Error: No file loaded";
   } else {
-    return loadedfile.map((row) => row.join(", ")).join("\n");
+    return formatCSVData(loadedfile);
   }
 }
 
@@ -36,4 +36,11 @@ export function searchFile(args: string[]): string {
   }
 }
 
+export function formatCSVData(data: string[][]): string {
+  const tableRows = data.map((row) => {
+    const cells = row.map((cell) => `<td>${cell}</td>`).join("");
+    return `<tr>${cells}</tr>`;
+  });
+  return `<table>${tableRows.join("")}</table>`;
+}
 
