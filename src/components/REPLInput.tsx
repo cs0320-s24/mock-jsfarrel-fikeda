@@ -1,10 +1,17 @@
 import "../styles/main.css";
 import { Dispatch, SetStateAction, useState } from "react";
 import { ControlledInput } from "./ControlledInput";
+import {
+  Command,
+  CommandResult,
+  Result,
+  handleCommand,
+  processCommandString,
+} from "../commands/handler/CommandUtil";
 
 interface REPLInputProps {
-  commands: string[];
-  setCommands: Dispatch<SetStateAction<string[]>>;
+  commandResults: CommandResult[];
+  setCommandResults: Dispatch<SetStateAction<CommandResult[]>>;
 }
 // You can use a custom interface or explicit fields or both! An alternative to the current function header might be:
 // REPLInput(history: string[], setHistory: Dispatch<SetStateAction<string[]>>)
@@ -12,7 +19,15 @@ export function REPLInput(props: REPLInputProps) {
   const [commandString, setCommandString] = useState<string>("");
 
   function handleSubmit() {
-    props.setCommands([...props.commands, commandString]);
+    const command: Command = processCommandString(commandString);
+    const result: Result = handleCommand(command);
+
+    const newCommandResult: CommandResult = {
+      command: command,
+      result: result,
+    };
+
+    props.setCommandResults([...props.commandResults, newCommandResult]);
   }
 
   /**
@@ -29,7 +44,9 @@ export function REPLInput(props: REPLInputProps) {
           ariaLabel={"Command input"}
         />
       </fieldset>
-      <button onClick={handleSubmit}>Submit ({props.commands.length})</button>
+      <button onClick={handleSubmit}>
+        Submit ({props.commandResults.length})
+      </button>
     </div>
   );
 }
