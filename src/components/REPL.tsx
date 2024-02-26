@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../styles/main.css";
 import { REPLHistory } from "./REPLHistory";
 import { REPLInput } from "./REPLInput";
+import { CommandResult } from "../commands/handler/CommandUtil";
 
 /* 
   You'll want to expand this component (and others) for the sprints! Remember 
@@ -13,13 +14,16 @@ import { REPLInput } from "./REPLInput";
 */
 
 export default function REPL() {
-  const [commands, setCommands] = useState<string[]>([]);
+  const [commandResults, setCommandResults] = useState<CommandResult[]>([]);
 
   return (
     <div className="repl">
-      <REPLHistory commands={commands} />
+      <REPLHistory commandResults={commandResults} />
       <hr></hr>
-      <REPLInput commands={commands} setCommands={setCommands} />
+      <REPLInput
+        commandResults={commandResults}
+        setCommandResults={setCommandResults}
+      />
     </div>
   );
 }
