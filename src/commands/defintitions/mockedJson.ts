@@ -1,4 +1,6 @@
 export const datasetMap = new Map<string, string[][]>();
+export const searchResultMap1 = new Map<string, string[][]>();
+export const searchResultMap2 = new Map<string, string[][]>();
 
  datasetMap.set("dataset1", [
     ['Street', 'Price', 'Bedrooms', 'Bathrooms', 'Sqft', 'Zip', 'City', 'State', 'Type'],
@@ -29,24 +31,30 @@ datasetMap.set("dataset3", [
     []
 ]);
 
-export const searchResultsBrown = [
+
+
+searchResultMap1.set("1Brown", [
+    ['Street', 'Price', 'Bedrooms', 'Bathrooms', 'Sqft', 'Zip', 'City', 'State', 'Type'],
     ['Brown St', '100000', '3', '2', '1500', '12345', 'Providence', 'RI', 'House']
-];
+]);
 
-export const searchResultsGold = [
+searchResultMap1.set("1Gold", [
+    ['Street', 'Price', 'Bedrooms', 'Bathrooms', 'Sqft', 'Zip', 'City', 'State', 'Type'],
     ['Gold St', '350000', '3', '3', '2200', '12348', 'Johnston', 'RI', 'Townhouse']
-];
+]);
 
-
-export const searchResults2Bed = [
+searchResultMap1.set("Bedrooms2", [
+    ['Street', 'Price', 'Bedrooms', 'Bathrooms', 'Sqft', 'Zip', 'City', 'State', 'Type'],
     ['Blue St', '300000', '2', '4', '2500', '12023', 'Warwick', 'RI', 'Apartment'],
     ['Orange St', '6000', '2', '4', '400', '12345', 'Newport', 'RI', 'Apartment'],
     ['Silver St', '180000', '2', '1', '1200', '12347', 'Pawtucket', 'RI', 'Apartment'],
     ['White St', '450000', '2', '4', '2800', '12349', 'Barrington', 'RI', 'House'],
     ['Gray St', '320000', '2', '3', '2000', '12351', 'Woonsocket', 'RI', 'Townhouse']
-];
+]);
+
+searchResultMap2.set("StreetDog", [
+    ['Street', 'Price', 'City', 'State', 'Type'],
+    ['Dog Ave', '100000', 'Providence', 'RI', 'House'],
+]);
 
 
-export const searchResultsDog = [
-    ['Dog Ave', '100000', 'Providence', 'RI', 'House']
-];
