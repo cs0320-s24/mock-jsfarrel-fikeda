@@ -28,11 +28,7 @@ export function handleCommand(command: Command): Result {
 
   if (commandFunction) {
     try {
-      const result = commandFunction(command.args);
-      return {
-        value: result,
-        success: true,
-      };
+      return commandFunction(command.args);
     } catch (e) {
       return {
         value: `Failed to execute command: ${command.name}`,

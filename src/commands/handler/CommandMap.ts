@@ -1,4 +1,7 @@
-import { loadFile, searchFile, readBackArgs, viewFile } from "../defintitions/CSVCommands";
+import { loadFile, searchFile, viewFile } from "../defintitions/CSVCommands";
+import { readBackArgs } from "../defintitions/EchoCommand";
+import { changeMode } from "../defintitions/ModeCommand";
+import { Result } from "./CommandUtil";
 
 /**
  * A command-processor function for our REPL. The function returns a string, which is the value to print to history when
@@ -8,7 +11,7 @@ import { loadFile, searchFile, readBackArgs, viewFile } from "../defintitions/CS
  * *NOT* contain the command-name prefix.
  */
 export interface REPLFunction {
-  (args: Array<string>): String | String[][];
+  (args: Array<string>): Result;
 }
 
 export interface CommandMap {
@@ -17,7 +20,8 @@ export interface CommandMap {
 
 export const commandMap: CommandMap = {
   echo: readBackArgs,
+  mode: changeMode,
   search: searchFile,
   load: loadFile,
-  view: viewFile 
+  view: viewFile,
 };
