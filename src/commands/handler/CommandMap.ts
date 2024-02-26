@@ -1,4 +1,4 @@
-import { readBackArgs } from "../defintitions/CSVCommands";
+import { loadFile, searchFile, readBackArgs, viewFile } from "../defintitions/CSVCommands";
 
 /**
  * A command-processor function for our REPL. The function returns a string, which is the value to print to history when
@@ -17,4 +17,7 @@ export interface CommandMap {
 
 export const commandMap: CommandMap = {
   echo: readBackArgs,
+  search: searchFile,
+  load: loadFile,
+  view: viewFile
 };

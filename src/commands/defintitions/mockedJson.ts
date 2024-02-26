@@ -1,4 +1,4 @@
-const csvData = [
+export const csvData = [
     ['Street', 'Price', 'Bedrooms', 'Bathrooms', 'Sqft', 'Zip', 'City', 'State', 'Type'],
     ['Brown St', '100000', '3', '2', '1500', '12345', 'Providence', 'RI', 'House'],
     ['Green St', '200000', '3', '3', '2000', '12235', 'East Providence', 'RI', 'House'],
@@ -14,11 +14,11 @@ const csvData = [
     ['Gray St', '320000', '2', '3', '2000', '12351', 'Woonsocket', 'RI', 'Townhouse']
 ];
 
-const searchResultsBrown = [
+export const searchResultsBrown = [
     ['Brown St', '100000', '3', '2', '1500', '12345', 'Providence', 'RI', 'House']
 ];
 
-const searchResultsGold = [
+export const searchResultsGold = [
     ['Gold St', '350000', '3', '3', '2200', '12348', 'Johnston', 'RI', 'Townhouse']
 ];
 
