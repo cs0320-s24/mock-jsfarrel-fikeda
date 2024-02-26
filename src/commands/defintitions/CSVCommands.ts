@@ -1,27 +1,39 @@
-import { useState } from "react";
-import { csvData } from "./mockedJson";
-// Add the import for the corresponding type declarations
+import { datasetMap, searchResultsBrown } from "./mockedJson";
 
-const [file, setFile] = useState<string>("");
+var loadedfile: string[][] | null = null;
+
 
 export function readBackArgs(args: string[]): string {
   return args.join(" ");
 }
 
-export function searchFile(args: string[]): string {
-  return "searching for " + args.join(" ");
-}
-
-export function viewFile(args: string[]): string  {
-  if (file === 'csv1'){
-    return JSON.stringify(csvData);
+export function loadFile(args: string[]): string {
+  const dataset = datasetMap.get(args[0]);
+  if (dataset){
+    loadedfile = dataset;
+    return "Loaded dataset from " + args[0];
   }
   else{
-    return "error in viewing" + args.join(" ");
+    return "Error: File not found at " + args[0];
   }
 }
 
-export function loadFile(args: string[]): string {
-  setFile(args.join(" "));
-  return "loading " + args.join(" ");
+export function viewFile(args: string[]): string {
+  if (loadedfile === null) {
+    return "Error: No file loaded";
+  } else {
+    return loadedfile.map((row) => row.join(", ")).join("\n");
+  }
 }
+
+export function searchFile(args: string[]): string {
+  if (args[0] === "1" && args[1] === "Brown") {
+    return JSON.stringify(searchResultsBrown);
+  }
+  else{
+    return "could not find " + args.join(" ");
+  
+  }
+}
+
+
