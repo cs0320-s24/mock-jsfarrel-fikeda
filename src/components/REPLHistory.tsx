@@ -24,9 +24,7 @@ export function REPLHistory(props: REPLHistoryProps) {
   );
 
   function renderResult(value: String | String[][]): JSX.Element {
-    if (typeof value === "string") {
-      return <span>{value}</span>;
-    } else if (Array.isArray(value) && Array.isArray(value[0])) {
+    if (Array.isArray(value) && Array.isArray(value[0])) {
       return renderTable(value);
     } else {
       return <span>{value}</span>;
@@ -41,7 +39,6 @@ export function REPLHistory(props: REPLHistoryProps) {
         ))}
       </tr>
     ));
-
     return <table>{tableRows}</table>;
   }
 
