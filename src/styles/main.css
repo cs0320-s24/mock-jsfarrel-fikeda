@@ -15,12 +15,12 @@
   overflow: scroll;
 }
 
-.repl-history-item {
+/* .repl-history-item {
   background-color: #232121;
 }
 .repl-history-item:nth-child(odd) {
   background-color: #2d2c2c;
-}
+} */
 
 .repl-input {
   margin: auto;

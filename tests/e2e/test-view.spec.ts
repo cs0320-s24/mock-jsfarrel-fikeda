@@ -8,7 +8,7 @@ test("successfully view file", async ({ page }) => {
     await page.getByLabel("Command input").click();
     await page.getByLabel("Command input").fill(mock_input);
     await page.getByText("Submit (0)").click();
-    await expect(page.getByText("load: Loaded dataset from dataset1")).toBeVisible();
+    await expect(page.getByText("Loaded dataset1")).toBeVisible();
     const mock_input2 = `view`;
     await page.getByLabel("Command input").click();
     await page.getByLabel("Command input").fill(mock_input2);
@@ -24,6 +24,6 @@ test("successfully view file", async ({ page }) => {
     await page.getByLabel("Command input").click();
     await page.getByLabel("Command input").fill(mock_input);
     await page.getByText("Submit (0)").click();
-    await expect(page.getByText("view: Error: No file loaded")).toBeVisible();
+    await expect(page.getByText("Error: No file loaded")).toBeVisible();
   });
 

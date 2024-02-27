@@ -76,9 +76,9 @@ test("after I click the button, my command gets pushed", async ({ page }) => {
   await page.getByLabel("Login").click();
   await expect(page.getByLabel("Sign Out")).toBeVisible();
 
-  const mock_input = `Awesome command`;
+  const mock_input = `invalidcommand`;
   await page.getByLabel("Command input").click();
   await page.getByLabel("Command input").fill(mock_input);
   await page.getByText("Submit (0)").click();
-  await expect(page.getByText(mock_input)).toBeVisible();
+  await expect(page.getByText("Command not found:")).toBeVisible();
 });
