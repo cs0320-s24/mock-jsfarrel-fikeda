@@ -36,6 +36,12 @@ export function viewFile(args: Array<string>): Result {
 }
 
 export function searchFile(args: Array<string>): Result {
+  if (args.length < 2) {
+    return {
+      value: "Error: Not enough arguments",
+      success: false,
+    };
+  }
   if (loadedfile === null) {
     return {
       value: "Error: No file loaded",
@@ -68,6 +74,11 @@ export function searchFile(args: Array<string>): Result {
           value: args[0] + " not found in " + loadedfileName,
           success: false,
         };
+  } else if (loadedfileName === "dataset3") {
+    return {
+      value: args[0] + " not found in " + loadedfileName,
+      success: false,
+    };
   } else {
     return {
       value: "Unsupported file",
