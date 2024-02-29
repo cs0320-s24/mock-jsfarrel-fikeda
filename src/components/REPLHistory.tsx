@@ -2,9 +2,18 @@ import "../styles/main.css";
 import { CommandResult } from "../commands/handler/CommandUtil";
 import { Mode, mode } from "../commands/defintitions/ModeCommand";
 
+/**
+ * Properties of REPLHistory, just a list of command results
+ */
 interface REPLHistoryProps {
   commandResults: CommandResult[];
 }
+
+/**
+ * This component's purpose is to display a history of command results
+ * @param props command results
+ * @returns history list of command results
+ */
 export function REPLHistory(props: REPLHistoryProps) {
   return (
     <div className="repl-history">

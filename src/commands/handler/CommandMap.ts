@@ -14,10 +14,16 @@ export interface REPLFunction {
   (args: Array<string>): Result;
 }
 
+/**
+ * A map of command names to their REPLFunctions
+ */
 export interface CommandMap {
   [key: string]: REPLFunction;
 }
 
+/**
+ * A map of commands used for the REPL
+ */
 export const commandMap: CommandMap = {
   echo: readBackArgs,
   mode: changeMode,

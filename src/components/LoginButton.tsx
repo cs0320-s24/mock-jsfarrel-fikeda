@@ -2,11 +2,19 @@ import { Dispatch, SetStateAction } from "react";
 import { mockAuthenticate, mockSignOut } from "../auth/AuthMock";
 import { Authenticate } from "../auth/AuthUtil";
 
+/**
+ * getter and setter for if a user is logged in
+ */
 interface loginProps {
   isLoggedIn: boolean;
   setIsLoggedIn: Dispatch<SetStateAction<boolean>>;
 }
 
+/**
+ * Login button
+ * @param props getter and setter for if a user is logged in
+ * @returns a button that allows the user to login or signout
+ */
 export function LoginButton(props: loginProps) {
   const login = (authMethod: Authenticate) => {
     if (authMethod()) {

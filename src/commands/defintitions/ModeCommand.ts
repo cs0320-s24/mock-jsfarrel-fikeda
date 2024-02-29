@@ -1,13 +1,24 @@
 import { useState } from "react";
 import { Result } from "../handler/CommandUtil";
 
+/**
+ * Enum representing the different modes of the REPL
+ */
 export enum Mode {
   Brief = "brief",
   Verbose = "verbose",
 }
 
+/**
+ * Default mode of the REPL
+ */
 export let mode: Mode = Mode.Brief;
 
+/**
+ * Change the mode of the REPL
+ * @param args Array of arguments
+ * @returns Result object of the command
+ */
 export const changeMode = (args: Array<string>): Result => {
   if (args.length !== 1) {
     if (mode === Mode.Brief) {

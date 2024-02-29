@@ -1,6 +1,10 @@
 import { Result } from "../handler/CommandUtil";
 import { datasetMap, searchResultMap1, searchResultMap2 } from "./mockedJson";
 
+/**
+ * CSV commands are all mocked.
+ */
+
 var loadedfile: string[][] | null = null;
 var loadedfileName: string | null = null;
 
