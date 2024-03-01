@@ -1,4 +1,4 @@
-import { loadFile, searchFile, viewFile } from "../defintitions/CSVCommands";
+import { loadFile, searchFile, viewFile, clearCSV } from "../defintitions/CSVCommands";
 import { readBackArgs } from "../defintitions/EchoCommand";
 import { changeMode } from "../defintitions/ModeCommand";
 import { Result } from "./CommandUtil";
@@ -30,4 +30,5 @@ export const commandMap: CommandMap = {
   search: searchFile,
   load: loadFile,
   view: viewFile,
+  clear: clearCSV
 };

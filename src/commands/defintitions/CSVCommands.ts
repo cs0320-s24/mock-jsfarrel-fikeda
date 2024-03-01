@@ -90,3 +90,14 @@ export function searchFile(args: Array<string>): Result {
     };
   }
 }
+
+export function clearCSV(args: Array<string>): Result {
+  loadedfile = null;
+  loadedfileName = null;
+
+  // Techinically has a return, but would not print anything to the console
+  return {
+    value: "Cleared loaded file",
+    success: true,
+  };
+}
