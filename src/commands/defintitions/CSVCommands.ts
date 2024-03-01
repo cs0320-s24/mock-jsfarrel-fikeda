@@ -20,11 +20,9 @@ export function loadFile(args: string[]): Result {
       }
     }
     else if (loadedfileName === "dataset3") {
-      loadedfile = null;
-      loadedfileName = null;
       return {
-        value: "Data set is empty",
-        success: false
+        value: "Warning: Data set " + loadedfileName + " is empty",
+        success: true
       };
     }
     else {
@@ -32,7 +30,7 @@ export function loadFile(args: string[]): Result {
       loadedfileName = null;
       return {
         value: "Corrupted file",
-        success: false,
+        success: false
       };
     }
   } else {

@@ -67,7 +67,7 @@ test("search empty dataset", async ({ page }) => {
   await page.getByLabel("Command input").click();
   await page.getByLabel("Command input").fill(mock_input);
   await page.getByText("Submit (0)").click();
-  await expect(page.getByText("Loaded dataset3")).toBeVisible();
+  await expect(page.getByText("Warning")).toBeVisible();
   const mock_input2 = `search 0 nonexistant`;
   await page.getByLabel("Command input").click();
   await page.getByLabel("Command input").fill(mock_input2);
@@ -75,7 +75,7 @@ test("search empty dataset", async ({ page }) => {
   await expect(page.getByText("not found in")).toBeVisible();
 });
 
-test("search one input failuure", async ({ page }) => {
+test("search one input failure", async ({ page }) => {
   await page.goto("http://localhost:8000/");
   await page.getByLabel("Login").click();
   await expect(page.getByLabel("Sign Out")).toBeVisible();
@@ -83,7 +83,7 @@ test("search one input failuure", async ({ page }) => {
   await page.getByLabel("Command input").click();
   await page.getByLabel("Command input").fill(mock_input);
   await page.getByText("Submit (0)").click();
-  await expect(page.getByText("Loaded dataset3")).toBeVisible();
+  await expect(page.getByText("Warning")).toBeVisible();
   const mock_input2 = `search 0`;
   await page.getByLabel("Command input").click();
   await page.getByLabel("Command input").fill(mock_input2);
