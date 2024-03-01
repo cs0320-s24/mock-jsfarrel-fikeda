@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { mockAuthenticate, mockSignOut } from "../auth/AuthMock";
 import { Authenticate } from "../auth/AuthUtil";
+import { Command, Result, handleCommand, processCommandString } from "../commands/handler/CommandUtil";
 
 /**
  * getter and setter for if a user is logged in
@@ -23,6 +24,7 @@ export function LoginButton(props: loginProps) {
   };
 
   const signOut = (signOutMethod: Authenticate) => {
+    handleCommand(processCommandString("clear"));
     if (signOutMethod()) {
       props.setIsLoggedIn(false);
     }
