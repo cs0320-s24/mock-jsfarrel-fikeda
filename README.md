@@ -32,6 +32,7 @@ REPL Systems
 Our testing includes tests for login, as well as CSV commands. They are broken down into two directories:
 
 - `e2e` - end-to-end tests
+  - `test-clear.spec.ts` - tests the clear function of the logout
   - `test-login.spec.ts` - tests the project's login system
   - `test-mode.spec.ts` - tests the project's mode command
   - `test-load.spec.ts` - tests the CSV load command
@@ -56,5 +57,7 @@ Open the localhost in your browser, then click sign in. After signing in you can
 - `load {csv_file}` - loads CSV file (**mocked**)
 - `view` - views CSV file (**mocked**)
 - `search {index} {value}` - searches CSV file (**mocked**)
+
+Logout will clear the loaded CSV. 
 
 # Collaboration
