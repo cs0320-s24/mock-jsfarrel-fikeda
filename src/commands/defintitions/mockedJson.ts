@@ -31,6 +31,11 @@ datasetMap.set("dataset3", [
     []
 ]);
 
+datasetMap.set("dataset4", [
+    ['Street', 'Price', 'City', 'State', 'Type'],
+    ['Dog Ave', '100000', 'Providence', 'RI'],
+]);
+
 
 
 searchResultMap1.set("1Brown", [

@@ -13,10 +13,28 @@ export function loadFile(args: string[]): Result {
   if (dataset) {
     loadedfile = dataset;
     loadedfileName = args[0];
-    return {
-      value: "Loaded " + args[0] + " with " + dataset.length + " rows",
-      success: true,
-    };
+    if (loadedfileName === "dataset1" || loadedfileName === "dataset2") {
+      return {
+        value: "Loaded " + args[0] + " with " + dataset.length + " rows",
+        success: true
+      }
+    }
+    else if (loadedfileName === "dataset3") {
+      loadedfile = null;
+      loadedfileName = null;
+      return {
+        value: "Data set is empty",
+        success: false
+      };
+    }
+    else {
+      loadedfile = null;
+      loadedfileName = null;
+      return {
+        value: "Corrupted file",
+        success: false,
+      };
+    }
   } else {
     return {
       value: "File " + args[0] + " not found",
